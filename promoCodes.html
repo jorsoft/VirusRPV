@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRPV | Promo Codes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="promo.css">
+</head>
+<body>
+    <div class="ban">
+        <div class="navbar">
+            <img class="small-logo" src="https://media.discordapp.net/attachments/1122238473018036274/1133376150798868590/Borderrpppp.png?width=460&height=457">
+            <a href="http://127.0.0.1:5500/index.html#">Main</a>
+            <a href="file:///C:/Users/T.K/Desktop/BorderRP/promoCodes.html#">Promo Codes</a>
+            <a href="file:///C:/Users/T.K/Desktop/BorderRP/grindEconomy.html#">Shop</a>
+            <a href="#">Gallery</a>
+            <p class="Economy" id="Economy">Economy Cash: 0</p>
+        </div>
+        <div class="container">
+            <center><b><p class="txt1">Enter Promo Codes</p></b></center>
+            <center><b><p class="txt2">And win prizes!</p></b></center>
+            <center><input type="text" id="code" placeholder="Enter Promocodes"></center>
+            <center><button id="clicked">Enter</button></center>
+        </div>
+    </div>
+
+    <script>
+console.log("Check");
+
+    const promoCodes = {
+        code1: 'FIRSTUSER',
+        code2: 'BRPVISBEST',
+        code3: 'WELOVEBRPV',
+        code4: 'WAYTO1K'
+    };
+
+    let cash = parseInt(localStorage.getItem('economyCash'))
+    document.getElementById("Economy").textContent = 'Economy Cash: ' + economyCash;
+
+    var invalid1;
+
+    document.getElementById("clicked").onclick = function runPromoCode() {
+        if ((document.getElementById("code").value === promoCodes.code1 || document.getElementById("code").value === promoCodes.code2) && invalid1 !== "CodeHasBeenUsed") {
+        alert("Congratulations! You won 2,000 of our Economy Money! :)");
+        economyCash += 2000;
+        document.getElementById("Economy").textContent = 'Economy Cash: ' + economyCash;
+        localStorage.setItem("economyCash", economyCash);
+        invalid1 = "CodeHasBeenUsed";
+        localStorage.setItem("invalid1", invalid1);
+        } else if (document.getElementById("code").value === promoCodes.code3 && invalid1 !== "CodeHasBeenUsed") {
+        alert("Congratulations! You won 500 of our Economy Money! :)");
+        economyCash += 500;
+        document.getElementById("Economy").textContent = 'Economy Cash: ' + economyCash;
+        localStorage.setItem("economyCash", economyCash);
+        } else if (document.getElementById("code").value === promoCodes.code4) {
+        alert("Congratulations! You won 1000 of our Economy Money! :)");
+        economyCash += 1000;
+        document.getElementById("Economy").textContent = 'Economy Cash: ' + economyCash;
+        localStorage.setItem("economyCash", economyCash);
+        } else {
+        alert("Code is incorrect! Try Again.");
+        }
+};
+    </script>
+</body>
+</html>
